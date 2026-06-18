@@ -140,9 +140,14 @@ function Hero() {
           </span>
         </div>
 
-        <div className="max-w-3xl">
+        {/* Spacer that reserves room for the strata bed on mobile.
+            The headline below is absolutely positioned over this same
+            area so it overlaps the bed on mobile too, matching desktop. */}
+        <div className="relative h-[260px] md:hidden" />
+
+        <div className="max-w-3xl md:static absolute left-6 right-6 top-[148px] md:left-auto md:right-auto md:top-auto">
           <h1
-            className="font-display text-[clamp(3.5rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)]"
+            className="mt-10 ml-4 font-display text-[clamp(3.5rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)]"
             style={{
               opacity: 0,
               transform: "translateY(24px)",
@@ -152,7 +157,7 @@ function Hero() {
             <span className="text-[var(--sg-green)]">Strat</span>Grove.
           </h1>
           <p
-            className="mt-6 max-w-md font-display text-2xl leading-tight tracking-tight"
+            className="mt-16 ml-4 max-w-md font-display text-2xl leading-tight tracking-tight"
             style={{
               opacity: 0,
               animation: "sg-fade 0.8s 1.1s forwards",
@@ -165,8 +170,6 @@ function Hero() {
             />
           </p>
         </div>
-
-        <div className="relative h-[260px] md:hidden" />
 
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p
