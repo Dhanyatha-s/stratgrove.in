@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --radius: 0rem;
+  --sg-black: oklch(0.14 0 0);
+  --sg-white: oklch(0.98 0.005 95);
+  --sg-green: oklch(0.78 0.21 142);
+  --sg-yellow: oklch(0.92 0.19 100);
+  --sg-violet: oklch(0.55 0.27 295);
+
+  --background: var(--sg-white);
+  --foreground: var(--sg-black);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--sg-black);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--sg-black);
+  --primary: var(--sg-black);
+  --primary-foreground: var(--sg-white);
+  --secondary: oklch(0.95 0.01 95);
+  --secondary-foreground: var(--sg-black);
+  --muted: oklch(0.94 0.01 95);
+  --muted-foreground: oklch(0.45 0.02 95);
+  --accent: var(--sg-green);
+  --accent-foreground: var(--sg-black);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.88 0.01 95);
+  --input: oklch(0.88 0.01 95);
+  --ring: var(--sg-violet);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@keyframes sg-fade {
+  to { opacity: 1; }
+}
+@keyframes sg-rise-text {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes sg-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes sg-rise {
+  to { opacity: 1; clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+@keyframes sg-breathe {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+@keyframes sg-drift {
+  to { background-position: 200px 100px, 180px 90px; }
+}
+@keyframes sg-scan {
+  to { transform: scaleX(1); }
+}
+@keyframes sg-marquee {
+  to { transform: translateX(-33.333%); }
+}
+@keyframes sg-strip {
+  to { transform: translateY(-6px); opacity: .4; }
+}
