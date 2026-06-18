@@ -123,7 +123,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative h-dvh min-h-[640px] w-full overflow-hidden bg-background pt-16"
+      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden bg-background pt-16 md:h-dvh md:min-h-[640px]"
     >
       <StrataHero />
       <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-between px-6 py-10">
