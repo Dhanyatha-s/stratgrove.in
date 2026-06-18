@@ -123,10 +123,10 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden bg-background pt-16 md:h-dvh md:min-h-[640px]"
+      className="relative h-auto min-h-0 w-full overflow-hidden bg-background pt-16 md:h-dvh md:min-h-[640px]"
     >
       <StrataHero />
-      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-between px-6 py-10">
+      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col gap-10 px-6 py-10 md:justify-between md:gap-0">
         <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70">
           <span
             style={{ opacity: 0, animation: "sg-fade 0.6s 0.1s forwards" }}
@@ -165,6 +165,8 @@ function Hero() {
             />
           </p>
         </div>
+
+        <div className="relative h-[260px] md:hidden" />
 
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p
