@@ -92,7 +92,7 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-background/80 backdrop-blur">
+    <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-background">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <PixelLogo />
