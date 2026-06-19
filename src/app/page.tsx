@@ -140,14 +140,13 @@ function Hero() {
           </span>
         </div>
 
-        {/* Spacer that reserves room for the strata bed on mobile.
-            The headline below is absolutely positioned over this same
-            area so it overlaps the bed on mobile too, matching desktop. */}
-        <div className="relative h-[260px] md:hidden" />
+        {/* Spacer that reserves room for the strata bed on mobile/tablet. */}
+        <div className="relative h-[34vh] min-h-[200px] max-h-[320px] md:hidden" />
 
-        <div className="max-w-3xl md:static absolute left-6 right-6 top-[148px] md:left-auto md:right-auto md:top-auto">
+        {/* H1 — positioned independently, edit freely without touching the <p> below */}
+        <div className="absolute left-6 right-6 top-[18vh] max-w-3xl sm:top-[20vh] md:static md:left-auto md:right-auto md:top-auto">
           <h1
-            className="mt-10 ml-4 font-display text-[clamp(3.5rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)]"
+            className="ml-2 mt-6 font-display text-[clamp(2.75rem,11vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)] sm:ml-4 sm:mt-10 md:ml-0 md:mt-0"
             style={{
               opacity: 0,
               transform: "translateY(24px)",
@@ -156,8 +155,12 @@ function Hero() {
           >
             <span className="text-[var(--sg-green)]">Strat</span>Grove.
           </h1>
+        </div>
+
+        {/* P — positioned independently, edit freely without touching the <h1> above */}
+        <div className="absolute left-6 right-6 top-[34vh] max-w-3xl sm:top-[38vh] md:static md:left-auto md:right-auto md:top-auto">
           <p
-            className="mt-16 ml-4 max-w-md font-display text-2xl leading-tight tracking-tight"
+            className="ml-2 max-w-md font-display text-xl leading-tight tracking-tight sm:ml-4 sm:text-2xl md:ml-0 md:mt-6"
             style={{
               opacity: 0,
               animation: "sg-fade 0.8s 1.1s forwards",
