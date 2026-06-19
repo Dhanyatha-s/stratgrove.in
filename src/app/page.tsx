@@ -127,83 +127,28 @@ function Hero() {
     >
       <StrataHero />
 
-      {/* MOBILE ONLY ATMOSPHERE */}
-      <div className="pointer-events-none absolute inset-0 z-[1] md:hidden">
-        {/* Glow */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 35%, rgba(123,255,90,.08), transparent 60%)",
-          }}
-        />
-
-        {/* Scanlines */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            background:
-              "repeating-linear-gradient(to bottom, transparent 0px, transparent 6px, black 7px)",
-          }}
-        />
-
-        {/* Data Labels */}
-        <div className="absolute left-4 top-28 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40">
-          FIELD ACTIVE
-        </div>
-
-        <div className="absolute right-4 top-28 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40">
-          Q1'26
-        </div>
-
-        <div className="absolute left-4 bottom-32 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40">
-          STRATA SHIFT
-        </div>
-
-        <div className="absolute right-4 bottom-32 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40">
-          NODE-01
-        </div>
-
-        {/* Floating technical dots */}
-        <span className="absolute left-4 top-[22%] size-1 rounded-full bg-foreground/30 animate-pulse" />
-        <span className="absolute right-5 top-[48%] size-1 rounded-full bg-foreground/30 animate-pulse" />
-        <span className="absolute left-6 top-[68%] size-1 rounded-full bg-foreground/30 animate-pulse" />
-      </div>
-
       <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col gap-10 px-6 py-10 md:justify-between md:gap-0">
         {/* Top Meta */}
         <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70">
-          <span
-            style={{
-              opacity: 0,
-              animation: "sg-fade 0.6s 0.1s forwards",
-            }}
-          >
+          <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.1s forwards" }}>
             [ 01 — Agency / 2026 ]
           </span>
-
-          <span
-            style={{
-              opacity: 0,
-              animation: "sg-fade 0.6s 0.2s forwards",
-            }}
-          >
+          <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.2s forwards" }}>
             N 40.7128° · W 74.0060°
           </span>
         </div>
 
-        {/* MOBILE SPACER - REDUCED */}
-        <div className="relative h-[24vh] min-h-[140px] max-h-[220px] md:hidden" />
+        {/* MOBILE SPACER */}
+        <div className="relative h-[26vh] min-h-[160px] max-h-[240px] md:hidden" />
 
         {/* HERO TITLE */}
-        <div className="absolute left-6 right-6 top-[14vh] max-w-3xl sm:top-[18vh] md:static md:left-auto md:right-auto md:top-auto">
+        <div className="absolute left-6 right-6 top-[16vh] max-w-3xl sm:top-[19vh] md:static md:left-auto md:right-auto md:top-auto">
           <h1
-            className="ml-4 mt-8 font-display text-[clamp(4rem,14vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)] sm:ml-4 sm:mt-8 md:ml-0 md:mt-0"
+            className="ml-2 mt-6 font-display text-[clamp(3.5rem,12vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)] sm:ml-4 sm:mt-10 md:ml-0 md:mt-0 md:text-[clamp(3.75rem,11vw,10rem)]"
             style={{
               opacity: 0,
               transform: "translateY(24px)",
-              animation:
-                "sg-rise-text 1s 0.5s cubic-bezier(.2,.7,.2,1) forwards",
+              animation: "sg-rise-text 1s 0.5s cubic-bezier(.2,.7,.2,1) forwards",
             }}
           >
             <span className="text-[var(--sg-green)]">Strat</span>Grove.
@@ -211,59 +156,34 @@ function Hero() {
         </div>
 
         {/* HERO SUBTITLE */}
-        <div className="absolute left-6 right-6 top-[26vh] max-w-3xl sm:top-[31vh] md:static md:left-auto md:right-auto md:top-auto">
+        <div className="absolute left-6 right-6 top-[38vh] max-w-3xl sm:top-[42vh] md:static md:left-auto md:right-auto md:top-auto">
           <p
-            className="ml-2 mt-8 max-w-md font-display text-xl leading-tight tracking-tight sm:ml-4 sm:text-2xl md:ml-0 md:mt-6"
-            style={{
-              opacity: 0,
-              animation: "sg-fade 0.8s 1.1s forwards",
-            }}
+            className="ml-2 max-w-md font-display text-xl leading-tight tracking-tight sm:ml-4 sm:text-2xl md:ml-0 md:mt-6"
+            style={{ opacity: 0, animation: "sg-fade 0.8s 1.1s forwards" }}
           >
             Strategies for{" "}
             <WordRoller
-              words={[
-                "growth.",
-                "brands.",
-                "revenue.",
-                "scale.",
-                "the next era.",
-              ]}
+              words={["growth.", "brands.", "revenue.", "scale.", "the next era."]}
               className="text-[var(--sg-violet)]"
             />
           </p>
         </div>
 
         {/* Bottom Content */}
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p
             className="max-w-sm text-sm leading-relaxed text-foreground/80"
-            style={{
-              opacity: 0,
-              animation: "sg-fade 0.8s 1.3s forwards",
-            }}
+            style={{ opacity: 0, animation: "sg-fade 0.8s 1.3s forwards" }}
           >
             A growth agency engineering brand, digital and AI systems for teams
             who plan to win the next five years — not the next quarter.
           </p>
-
-          {/* Enhanced Mobile Scroll Indicator */}
           <div
-            className="flex flex-col items-start gap-2 font-mono text-[10px] uppercase tracking-[0.2em]"
-            style={{
-              opacity: 0,
-              animation: "sg-fade 0.8s 1.5s forwards",
-            }}
+            className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em]"
+            style={{ opacity: 0, animation: "sg-fade 0.8s 1.5s forwards" }}
           >
-            <div className="flex items-center gap-3">
-              <span className="inline-block size-2 animate-pulse bg-[var(--sg-green)]" />
-              <span>Scroll</span>
-            </div>
-
-            <span className="animate-bounce text-xs">↓</span>
-
-            <span className="text-foreground/60">
-              The Strata Shift
-            </span>
+            <span className="inline-block size-2 animate-pulse bg-[var(--sg-green)]" />
+            <span>Scroll — the strata shift.</span>
           </div>
         </div>
       </div>
