@@ -82,22 +82,27 @@ export default function Page() {
 }
 
 function Nav() {
+  const [open, setOpen] = useState(false);
+
+  const links: [string, string][] = [
+    ["Services", "#services"],
+    ["Work", "#work"],
+    ["About", "#about"],
+    ["Contact", "#contact"],
+  ];
+
   return (
     <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-3">
+        <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <PixelLogo />
           <span className="font-mono text-[11px] uppercase tracking-[0.18em]">
             StratGrove<span className="text-[var(--sg-violet)]">®</span>
           </span>
         </a>
+
         <nav aria-label="Primary" className="hidden gap-8 md:flex">
-          {[
-            ["Services", "#services"],
-            ["Work", "#work"],
-            ["About", "#about"],
-            ["Contact", "#contact"],
-          ].map(([l, h]) => (
+          {links.map(([l, h]) => (
             <a
               key={l}
               href={h}
@@ -107,6 +112,7 @@ function Nav() {
             </a>
           ))}
         </nav>
+
         <a
           href="#contact"
           className="group relative hidden items-center gap-2 border border-black bg-[var(--sg-black)] px-4 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--sg-white)] transition-colors hover:bg-[var(--sg-violet)] md:inline-flex"
@@ -114,6 +120,61 @@ function Nav() {
           Start a project
           <span aria-hidden>→</span>
         </a>
+
+        {/* Mobile menu toggle */}
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          aria-label={open ? "Close menu" : "Open menu"}
+          className="flex flex-col items-center justify-center gap-[5px] border border-black p-2.5 md:hidden"
+        >
+          <span
+            className={`block h-[1.5px] w-5 bg-[var(--sg-black)] transition-transform duration-300 ${
+              open ? "translate-y-[3.5px] rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`block h-[1.5px] w-5 bg-[var(--sg-black)] transition-transform duration-300 ${
+              open ? "-translate-y-[3.5px] -rotate-45" : ""
+            }`}
+          />
+        </button>
+      </div>
+
+      {/* Mobile dropdown menu */}
+      <div
+        id="mobile-nav"
+        className={`overflow-hidden border-t border-black/10 bg-background transition-[grid-template-rows] duration-300 ease-out md:hidden ${
+          open ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <nav aria-label="Mobile" className="flex flex-col px-6 py-4">
+            {links.map(([l, h], i) => (
+              <a
+                key={l}
+                href={h}
+                onClick={() => setOpen(false)}
+                className={`flex items-center justify-between py-3 font-mono text-sm uppercase tracking-[0.18em] ${
+                  i !== links.length - 1 ? "border-b border-black/10" : ""
+                }`}
+              >
+                {l}
+                <span aria-hidden className="text-foreground/40">→</span>
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex items-center justify-between border border-black bg-[var(--sg-black)] px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--sg-white)]"
+            >
+              Start a project
+              <span aria-hidden>→</span>
+            </a>
+          </nav>
+        </div>
       </div>
     </header>
   );
@@ -128,7 +189,6 @@ function Hero() {
       <StrataHero />
 
       <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col gap-10 px-6 py-10 md:justify-between md:gap-0">
-        {/* Top Meta */}
         <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70">
           <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.1s forwards" }}>
             [ 01 — Agency / 2026 ]
@@ -138,10 +198,8 @@ function Hero() {
           </span>
         </div>
 
-        {/* MOBILE SPACER */}
         <div className="relative h-[26vh] min-h-[160px] max-h-[240px] md:hidden" />
 
-        {/* HERO TITLE */}
         <div className="absolute left-6 right-6 top-[16vh] max-w-3xl sm:top-[19vh] md:static md:left-auto md:right-auto md:top-auto">
           <h1
             className="ml-2 mt-6 font-display text-[clamp(3.5rem,12vw,10rem)] font-medium leading-[0.9] tracking-[-0.04em] mix-blend-difference text-[var(--sg-white)] sm:ml-4 sm:mt-10 md:ml-0 md:mt-0 md:text-[clamp(3.75rem,11vw,10rem)]"
@@ -155,8 +213,7 @@ function Hero() {
           </h1>
         </div>
 
-        {/* HERO SUBTITLE */}
-        <div className="absolute left-6 right-6 top-[38vh] max-w-3xl sm:top-[42vh] md:static md:left-auto md:right-auto md:top-auto">
+        <div className="absolute left-6 right-6 top-[30vh] max-w-3xl sm:top-[42vh] md:static md:left-auto md:right-auto md:top-auto">
           <p
             className="ml-2 max-w-md font-display text-xl leading-tight tracking-tight sm:ml-4 sm:text-2xl md:ml-0 md:mt-6"
             style={{ opacity: 0, animation: "sg-fade 0.8s 1.1s forwards" }}
@@ -169,7 +226,6 @@ function Hero() {
           </p>
         </div>
 
-        {/* Bottom Content */}
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <p
             className="max-w-sm text-sm leading-relaxed text-foreground/80"
@@ -494,14 +550,12 @@ function WorkCard({
       onPointerLeave={() => setM({ x: 50, y: 50, active: false })}
       className="group relative aspect-[4/5] w-full overflow-hidden border border-black/10 bg-[var(--sg-black)]"
     >
-      {/* Artwork image */}
       <img
         src={img}
         alt={title}
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-500 ease-out group-hover:scale-105"
       />
-      {/* Pixel pattern background */}
       <div
         className="absolute inset-0 opacity-90 transition-transform duration-500 ease-out group-hover:scale-105"
         style={{
@@ -511,7 +565,6 @@ function WorkCard({
           backgroundSize: `100% 100%, 14px 14px`,
         }}
       />
-      {/* Pixel overlay grid */}
       <div
         className="absolute inset-0 mix-blend-screen transition-opacity duration-300"
         style={{
@@ -522,12 +575,10 @@ function WorkCard({
           backgroundSize: "14px 14px",
         }}
       />
-      {/* Scanline accent */}
       <div
         className="absolute inset-x-0 h-px bg-[var(--sg-white)]/40 transition-all duration-200"
         style={{ top: `${m.y}%`, opacity: m.active ? 1 : 0 }}
       />
-      {/* Bottom gradient for text legibility */}
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
 
       <div className="relative z-10 flex h-full flex-col justify-between p-5 text-[var(--sg-white)]">
