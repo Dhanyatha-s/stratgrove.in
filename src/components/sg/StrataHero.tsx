@@ -73,9 +73,9 @@ export function StrataHero() {
           return (
             <g key={q}>
               <line
-                x1="4"
+                x1="1"
                 y1={y}
-                x2="96"
+                x2="99"
                 y2={y + tilt}
                 stroke="oklch(0.14 0 0 / 0.35)"
                 strokeWidth={isMobile ? "0.18" : "0.6"}
@@ -86,8 +86,8 @@ export function StrataHero() {
                   animation: `sg-draw 1.4s ${0.2 + i * 0.08}s cubic-bezier(.2,.7,.2,1) forwards`,
                 }}
               />
-              <circle cx="4" cy={y} r="0.35" fill="var(--sg-black)" opacity="0" style={{ animation: `sg-fade 0.4s ${0.2 + i * 0.08}s forwards` }} />
-              <circle cx="96" cy={y + tilt} r="0.35" fill="var(--sg-black)" opacity="0" style={{ animation: `sg-fade 0.4s ${0.9 + i * 0.08}s forwards` }} />
+              <circle cx="1" cy={y} r="0.35" fill="var(--sg-black)" opacity="0" style={{ animation: `sg-fade 0.4s ${0.2 + i * 0.08}s forwards` }} />
+              <circle cx="99" cy={y + tilt} r="0.35" fill="var(--sg-black)" opacity="0" style={{ animation: `sg-fade 0.4s ${0.9 + i * 0.08}s forwards` }} />
             </g>
           );
         })}
