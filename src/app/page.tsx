@@ -189,7 +189,7 @@ function Hero() {
       <StrataHero />
 
       <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col gap-10 px-6 py-10 md:justify-between md:gap-0">
-        <div className="flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70 sm:flex-row sm:items-start sm:justify-between sm:gap-0">
+        <div className="flex items-start justify-between font-mono text-[8px] uppercase tracking-[0.1em] text-foreground/70 sm:text-[10px] sm:tracking-[0.2em]">
           <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.1s forwards" }}>
             [ 01 — Agency / 2026 ]
           </span>
