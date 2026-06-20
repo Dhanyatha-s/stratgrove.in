@@ -188,6 +188,7 @@ function Hero() {
     >
       <StrataHero />
 
+      <div className="pointer-events-none relative z-10 mx-auto flex h-full max-w-[1400px] flex-col gap-10 px-6 py-10 md:justify-between md:gap-0">
         <div className="flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/70 sm:flex-row sm:items-start sm:justify-between sm:gap-0">
           <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.1s forwards" }}>
             [ 01 — Agency / 2026 ]
@@ -195,7 +196,8 @@ function Hero() {
           <span style={{ opacity: 0, animation: "sg-fade 0.6s 0.2s forwards" }}>
             N 40.7128° · W 74.0060°
           </span>
-      </div>
+        </div>
+
         <div className="relative h-[26vh] min-h-[160px] max-h-[240px] md:hidden" />
 
         <div className="absolute left-6 right-6 top-[16vh] max-w-3xl sm:top-[19vh] md:static md:left-auto md:right-auto md:top-auto">
