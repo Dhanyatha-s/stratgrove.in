@@ -92,7 +92,7 @@ function Nav() {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-background">
+    <header className="fixed top-0 z-50 w-full border-b border-black/10 bg-white">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <PixelLogo />
@@ -623,7 +623,7 @@ function Contact() {
               what you're trying to grow — we'll reply within one business day.
             </p>
 
-            <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border border-[var(--sg-white)]/15 bg-[var(--sg-black)]/40 p-8 text-sm backdrop-blur">
+            <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 border border-[var(--sg-white)]/15 bg-[var(--sg-black)]/40 p-8 text-sm backdrop-blur">
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--sg-yellow)]">
                   Email
